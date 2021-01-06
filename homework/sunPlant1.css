@@ -1,0 +1,258 @@
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+
+}
+.section-block{
+    /* padding: 50px 0; */
+}
+.header{
+    display: flex; 
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+    z-index: 2;
+}
+.nav{
+    width: 33.3%;
+    display: flex;
+}
+.nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    
+}
+.list li a{
+    text-decoration:none;
+    margin: 12px;
+    font-size: 20px;
+    color: black;
+}
+.icon img{
+    width: 20px;
+    height: 25px;
+    margin: 10px;
+}
+.icon{
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+.logo img{
+    width: 40%;
+    height: 80%;
+    
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.about{
+    background: url(/sunplant-pic/asset\ 7.png)
+}
+.container{
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0 ;
+
+}
+
+.about .main-title{
+    width: 50%;
+    text-align: center;
+    margin-top: 100px;
+    
+}
+.main-title{
+    width: 70%;
+    text-align: center;
+    margin-top: 100px;
+    margin: auto;
+    
+}
+.about .container .main-title h2{
+    font-size: 50px;
+}
+.about .container .list-group img{
+    width: 70%;
+    vertical-align: top;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.about .container .list-group{
+    width: 50%; 
+
+}
+button{
+    color: #fff;
+    font-size: 10px;
+    width: 200px;
+    height: 30px;
+    background-color: black;
+    margin:10px 0px;
+
+}
+.list-group{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.list-group .list-item img{
+    width: 100%;
+    vertical-align: top;
+    opacity: 1;
+    transition: .5s;
+}
+.list-group .list-item:hover img{
+    opacity: .5;
+}
+.media .container .list-group .list-item:hover{
+    opacity: .5;
+    background-color: #000;
+}
+
+.product .list-group .list-item{background-color: #fff;}
+/* .media .list-group .list-item{background-color: #000;} */
+
+.pick .container .list-group{
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.pick .container{
+    padding: 0;
+}
+.pick .container .list-group .list-item{
+    width: 33.3%;
+    padding: 70px 10px;
+    box-sizing: border-box;
+
+}
+
+.media .container{
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+.media .container .list-group .list-item img{
+    width: 100%;
+}
+.media .container .list-group{
+    justify-content: space-between;
+}
+.media .container .list-group .list-item{
+    width: 20%;
+    
+    box-sizing: border-box;
+}
+.product .container .main-title{
+    width: 50%;
+    
+    
+}
+.product .container .list-group img{
+    width: 100%;
+    
+    box-sizing: border-box;
+    
+}
+.product .container .list-group{
+    
+    width: 50%;
+}
+.media .container .list-group .list-item img{
+    
+    width: 100%;
+    vertical-align: top;
+    margin-left: auto;
+}
+.pick .list-group .list-item{
+    padding: 10px 0px;
+}
+.product .container{
+    background-color: #f4f4f4;
+}
+.benefit .container .list-group{
+    display: flex;
+    flex-wrap: wrap;
+}
+.benefit .container .list-group .list-item{
+    width: 33.3%;
+    
+
+}
+.benefit .container .list-group .list-item:nth-child(1){
+    
+    text-align: right;
+}
+.benefit .container .list-group .list-item .list-item-txt h3{
+    padding: 10px 0px;
+}
+.product .container{
+    background-image: url("/sunplant-pic/asset 43.png");
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrap{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.media .container{
+    display: flex;
+
+
+}
+.media .container .instagram-logo img{
+    vertical-align: top;
+    margin: auto;  
+    justify-content: center;
+    align-content: center;
+    padding:10px;
+
+
+}
+.media .container .instagram-logo{
+    display: inline;
+}
+.media .container h4{
+    padding:0 0 20px 0 ;
+    text-align: center;
+}
+.instagram-logo{
+    display: block;
+
+}
+.service .container{
+    background-color: #f4f4f4;
+    width: 100%;
+    
+    
+}
+.service-logo img{
+    width: 50%;
+    vertical-align: top;
+    margin: auto;
+    
+    
+}
+.service-logo{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.benefit .list-group{
+    padding: 50px;
+}
