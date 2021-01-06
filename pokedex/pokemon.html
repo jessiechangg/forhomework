@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrap {
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            background-color: yellow;
+            margin: 30px;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        button:focus {
+            outline: none;
+            border: none;
+        }
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+        .item{
+            background-color: wheat;
+            border-radius: 50%;
+            width: 200px;
+            /*box-shadow: 0 0 3px 3px #ccc;*/
+            margin: 50px auto;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .item img{
+            width: 85%;
+        }
+        button{
+            position: relative;
+
+        }
+        button:hover{
+
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <!-- <h1>寶可夢圖鑑列表</h1> -->
+            <img src="/pokemon.png">
+        </div>
+        <div class="main">
+            <button onclick="fetchPokemon()" style="font-family: 'Luckiest Guy', cursive;">POKEDEX</button>
+            <button onclick="append()" style="font-family: 'Luckiest Guy', cursive;">appendChild</button>
+            <button onclick="reset()" style="font-family: 'Luckiest Guy', cursive;">RESET</button>
+            <div id="container">
+
+                <!-- <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"> -->
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        let container = document.getElementById("container");
+        window.onload = appendPokemon();
+
+
+        function appendPokemon() {
+            let img = document.createElement("img");
+            let div=document.createElement("div");
+            img.setAttribute("src", "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png")
+            // div.setAttribute("style","width:25%;")
+
+            div.appendChild(img);
+            div.className="item";
+            container.appendChild(div);
+            
+        }
+
+        function fetchPokemon() {
+            let pokemon = "";
+            for (let i = 1; i < 890; i++) {
+                let fileName = i.toString().padStart(3, "0");
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`
+                let pokemonImg = `<img src="${pathFile}"/>`;
+
+                pokemon += pokemonImg;
+            }
+            container.innerHTML = pokemon;
+        }
+
+        function append() {
+            
+            for (let i = 2; i < 890; i++) {
+                let img = document.createElement("img");
+                let div = document.createElement("div");
+                let fileName = i.toString().padStart(3, "0");
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                img.src = pathFile;
+                div.className = "item";
+                div.appendChild(img);
+                // div.setAttribute("style","width:25%;")                
+                container.appendChild(div);
+                // console.log("1")
+            }
+        }
+
+        function reset() {
+            container.innerHTML = "";
+            appendPokemon();
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
