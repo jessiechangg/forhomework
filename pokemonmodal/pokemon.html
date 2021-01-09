@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="logo">
+            <img src="./pokemon.png" alt="logo">
+        </div>
+        <div class="container">
+            <div class="row" id="container_card">
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        window.onload=getJson();
+        let jsonArray=[];
+
+
+
+        function getJson(){
+            let xhr = new XMLHttpRequest()
+            xhr.onload=function(){
+
+             jsonArray = JSON.parse(this.responseText)
+             
+            
+
+             for(let num in jsonArray){
+                 //
+                 createCard(num)
+             }
+            }
+
+
+            xhr.open("GET","https://raw.githubusercontent.com/apprunner/pokemon.json/master/pokedex.json");
+            xhr.send();
+        }
+
+        function createCard(num){
+
+            let card= document.createElement("div")
+            let card_pic = getPokemon_pic(jsonArray[num].id)
+       
+            let card_txt=getPokemon_txt(jsonArray[num])
+            
+            
+            card.appendChild(card_pic)
+            card.appendChild(card_txt)
+            
+            let container_card =document.getElementById("container_card")
+            container_card.appendChild(card)
+           
+
+        }
+
+        function getPokemon_pic(id){
+            let card_pic= document.createElement("img")
+            // console.log(typeof(id))
+
+            card_pic.src=`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id.toString().padStart(3,"0")}.png`
+            
+            return card_pic
+        }
+        function getPokemon_txt(obj){
+            let card_txt=document.createElement("div")
+            
+            let name=obj.name.chinese
+           
+            
+            let button= document.createElement("bottom")
+            button.innerText="按我"
+            let p= document.createElement("p")
+            p.innerHTML=name
+
+            card_txt.append(p,button)
+            
+            return card_txt
+        }
+
+        
+    </script>
+</body>
+</html>
